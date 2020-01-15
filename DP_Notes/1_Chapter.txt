@@ -1,0 +1,35 @@
+A design pattern systematically names, motivates, and explains a general design that addresses a recurring design problem in object-oriented systems. It describes the problem, the solution, when to apply the solution, and its consequences. It also gives implementation hints and examples. The solution is a general arrangement of objects and classes that solve the problem. The solution is customized and implemented to solve the problem in a particular context.
+
+# The Factory Method
+
+Is based on single function written to handle our object creation task. 
+
+The Django web framework uses the factory method pattern for creating the fields of a web form.
+
+The factory method centralizes object creation and tracking your objects becomes much easier.
+
+	$ import xml.etree.ElementTree as etree
+	$ self.tree = etree.parse(filepath)
+
+# The Abstract Factory
+
+The abstract factory design pattern is a generalization of the factory method. Basically, an abstract factory is a (logical) group of factory methods, where each factory method is responsible for generating a different kind of object.
+
+# The Builder Pattern
+
+The Builder pattern separates the construction of a complex object from its representation, the same construction can be used to create several different representations.
+
+A practical example can help us understand what the purpose of the builder pattern is. Suppose that we want to create an HTML page generator. The basic structure (construction part) of an HTML page is always the same: it begins with  <html>  and finishes with </html> , inside the HTML section are the  <head>  and  </head>  elements, inside the head section are the  <title>  and  </title>  elements, and so forth. But the representation of the page can differ. Each page has its own title, its own headings, and different  <body> contents. Moreover, the page is usually built in steps: one function adds the title, another adds the main heading, another the footer, and so on. Only after the whole structure of a page is complete can it be shown to the client using a final render function. We can take it even further and extend the HTML generator so that it can generate totally different HTML pages. One page might contain tables, another page might contain image galleries, yet another page contains the contact form, and so on.
+
+We use the builder pattern for creating an object in situations where using the factory pattern (either a factory method or an abstract factory) is not a good option. A builder pattern is usually a better candidate than a factory pattern when the following applies: 
+	a) We want to create a complex object (an object composed of many parts and created in different steps that might need to follow a specific order).
+	b) Different representations of an object are required, and we want to keep the construction of an object decoupled from its representation.
+	c) We want to create an object at one point in time, but access it at a later point.
+
+
+/* Prototype and Singleton */
+
+The prototype pattern is useful when one needs to create objects based on an existing object by using a 'cloning' technique.
+
+The Singleton pattern offers a way to implement a class from which you can only create one object.
+
